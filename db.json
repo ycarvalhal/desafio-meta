@@ -1,0 +1,11 @@
+{
+  "contatos": [
+    {
+      "id": 1,
+      "nome": "Yan Carvalhal da Cunha",
+      "canal": "email",
+      "valor": "ycarvalhal@gmail.com",
+      "obs": "Spassu"
+    }
+  ]
+}

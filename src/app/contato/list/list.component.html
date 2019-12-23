@@ -1,0 +1,28 @@
+<div class="list">
+    <button class="btn btn-primary" (click)="create()">Criar Contato</button>
+    
+    <table>
+        <thead>
+            <td>#</td>
+            <td>Nome</td>
+            <td>Canal</td>
+            <td>Valor</td>
+            <td>Obs</td>
+            <td></td>
+        </thead>
+    
+        <tbody>
+            <tr *ngFor="let contato of contatos">
+                <td data-label="#">{{ contato.id }}</td>
+                <td data-label="Nome">{{ contato.nome }}</td>
+                <td data-label="Canal">{{ contato.canal }}</td>
+                <td data-label="Valor">{{ contato.valor }}</td>
+                <td data-label="Obs" id="contato-obs">{{ contato.obs }}</td>
+                <td>
+                    <button class="btn btn-info" (click)="edit(contato.id)">Editar</button>
+                    <button class="btn btn-danger" (click)="delete(contato.id)">Excluir</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>

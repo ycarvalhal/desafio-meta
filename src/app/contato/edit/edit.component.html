@@ -1,0 +1,29 @@
+<div class="edit">
+    <h3 class="title">Cadastro de Contatos</h3>
+
+    <form [formGroup]="contatoForm" (ngSubmit)="onSubmit()">
+        <input type="hidden" formControlName="id">
+        <input type="text" formControlName="nome" placeholder="Nome" required>
+        <div *ngIf="submitted && formFields.nome.errors">
+            <div class="invalid" *ngIf="formFields.nome.errors.required">Nome é obrigatório</div>
+        </div>
+
+        <select formControlName="canal" required>
+            <option *ngFor="let canal of canais; let i = index" [value]="canais[i]">
+                {{canais[i]}}
+            </option>
+        </select>
+        <div *ngIf="submitted && formFields.canal.errors">
+            <div class="invalid" *ngIf="formFields.canal.errors.required && submitted">Canal é obrigatório</div>
+        </div>
+
+        <input [type]="canal" formControlName="valor" placeholder="Valor" required>
+        <div *ngIf="submitted && formFields.valor.errors">
+            <div class="invalid" *ngIf="formFields.valor.errors.required && submitted">Valor é obrigatório</div>
+        </div>
+
+        <textarea type="text" formControlName="obs" placeholder="Observações" maxlength="150" rows="4"></textarea>
+
+        <button class="btn btn-primary">Enviar</button>
+    </form>
+</div>
